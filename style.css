@@ -1,0 +1,32 @@
+#all-body{
+  background-color: #007da0;
+}
+
+.container{
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: #3cd2e6;
+}
+
+#login-form{
+  background-color: #ffffff;
+  /* background-color: #ffffff; */
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  border: solid 1px;
+}
+
+#meals{
+  /* background-color: #FF325A; */
+  background-color: #3cd2e6;
+  text-align: center;
+  padding: 10px;
+  margin: 50px;
+  border-radius: 5px;
+}
+
+#meals h1{
+  background-color: #3cd2e6;
+}
