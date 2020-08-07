@@ -1,4 +1,5 @@
 function showLogin() {
+  $('#aris').hide()
 
 }
 function showRegister() {
@@ -67,16 +68,17 @@ $(document).ready(function () {
   })
 
   $('#login-form').on('submit', function (event) {
+    event.preventDefault()
     const email = $('#email-login').val()
     const password = $('#password-login').val()
 
-    //console.log(email, password)
+    console.log(email, password)
     $('#email-login').val('')
     $('#password-login').val('')
 
     $.ajax({
       method: 'POST',
-      url: `${SERVER_PATH}/users/login`,
+      url: `http://localhost:3000/users/login`,
       data: {
         email,
         password
