@@ -45,7 +45,7 @@ function showLogin() {
 function showRegister() {
   $('#register').show()
   $('#login').hide()
-  $('#resto').show()
+  $('#resto').hide()
   $('#navbar').hide()
   $('#meals').hide()
 
@@ -99,10 +99,13 @@ function mealsRecomendation() {
 }
 function fetchDataResto() {
   console.log('fetc data Resto nih')
-  // $('#list-resto').empty()
+  $('#list-resto').empty()
   $.ajax({
     method: 'GET',
-    url: `${SERVER_PATH}/restaurant`
+    url: `${SERVER_PATH}/restaurant`,
+    headers: {
+      token: localStorage.getItem('access_token')
+    }
   })
     .done((response) => {
       console.log('done')
