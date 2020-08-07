@@ -6,6 +6,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <!-- Meta Google Sigin Api With my client Id-->
+  <meta name="google-signin-client_id" content="688088739708-akoo46kgbbi96iqkc3psfd46ufdof34s.apps.googleusercontent.com">
+
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
     integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
@@ -15,18 +18,48 @@
 
 <body>
 
-  <div id="aris">
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">Food WEB</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a id="btnGoToRestoPage" class="nav-link" href="#">Resto</a>
+          </li>
+          <li class="nav-item">
+            <a id="aga" class="nav-link" href="#">Aga</a>
+          </li>
+          <li class="nav-item">
+            <a id="aris" class="nav-link" href="#">Aris</a>
+          </li>
+          <li class="nav-item">
+            <a id="noval" class="nav-link" href="#">Noval</a>
+          </li>
+        </ul>
+        <button id="btnLogout" class="btn btn-outline-danger my-2 my-sm-0">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <div id="meals">
     <h1>Today Food Recomendation</h1><br>
     <button id="fecthMeals">Click Me</button>
     <div class="" id="appendMeals">
-      
     </div>
   </div>
 
   <div id="aga">
 
   </div>
-  <section id="login-page">
+  <section id="login">
     <div class="container">
       <div class="row">
         <div class="col-sm-8 offset-sm-2">
@@ -57,7 +90,40 @@
     </div>
   </section>
 
+  <section id="register">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 offset-sm-2">
   
+          <form id="register-form" class="form">
+            <h3 class="subjudul">Register Form</h3>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" id="email-register" aria-describedby="emailHelp"
+                placeholder="ex : ichlasul0899@gmail.com">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password-register"
+                placeholder="Password Harus lebih dari 6 karakter">
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+          </form><br>
+          <p><strong>If you have account. Klik this link : <a href="" id="login-button">LOGIN</a></strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="resto">
+    <div class="container">
+      <h3>Top Restaurant Near You</h3>
+      <p style="color: aquamarine;">Location : Jakarta</p>
+      <div id="list-resto" class="row">
+      </div>
+    </div>
+  </div>
 
   <div id="noval">
 
