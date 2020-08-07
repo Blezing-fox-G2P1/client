@@ -131,6 +131,16 @@ function fetchDataResto() {
     })
 }
 
+function fetchNutrition() {
+  $.ajax({
+    method: "GET",
+    url: "http://localhost:3000/nutrition",
+    headers: {
+      access_token: localStorage.getItem('access_token')
+    }
+  })
+}
+
 $(document).ready(function () {
   if (!localStorage.getItem('access_token')) {
     showLogin()
