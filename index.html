@@ -19,7 +19,7 @@
 
 <body id="all-body">
 
-  <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
       <a class="navbar-brand" href="#">Food WEB</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -29,35 +29,27 @@
     
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <li class="nav-item">
+            <a id="btnGoToRestoPage" class="nav-link" href="#">Resto Near You</a>
           </li>
           <li class="nav-item">
-            <a id="btnGoToRestoPage" class="nav-link" href="#">Resto</a>
-          </li>
-          <li class="nav-item">
-            <a id="aga" class="nav-link" href="#">Aga</a>
-          </li>
-          <li class="nav-item">
-            <a id="btnMeals" class="nav-link" href="#">Aris</a>
-          </li>
-          <li class="nav-item">
-            <a id="noval" class="nav-link" href="#">Noval</a>
+            <a id="btnMeals" class="nav-link" href="#">Meals Recomendation</a>
           </li>
         </ul>
-        <button id="btnLogout" class="btn btn-outline-danger my-2 my-sm-0">Logout</button>
+        <button id="btnLogout" class="btn btn-danger my-2 my-sm-0">Logout</button>
       </div>
     </div>
   </nav>
 
-  <div id="meals">
+  <div id="meals"  style="margin-top: 30px;">
     <div class="container">
       <h1>Today Food Recomendation</h1><br>
-      <button id="fecthMeals">Click Me</button>
-      <div class="" id="appendMeals">
+      <button class="btn btn-primary" id="fecthMeals">Click Me</button>
+      <div id="appendMeals">
       </div>
     </div>
   </div>
+
 
   <div id="aga">
     <h1>Calculate your Nutrient intake!</h1>
@@ -85,8 +77,7 @@
       </div>
     </form>    
   </div>
-
-  <section id="login">
+  <section id="login" style="margin-top: 40px;">
     <div class="container">
       <div class="row">
         <div class="col-sm-8 offset-sm-2">
@@ -117,7 +108,7 @@
     </div>
   </section>
 
-  <section id="register">
+  <section id="register" style="margin-top: 40px;">
     <div class="container">
       <div class="row">
         <div class="col-sm-8 offset-sm-2">
@@ -143,7 +134,7 @@
     </div>
   </section>
 
-  <div id="resto">
+  <div id="resto" style="margin-top: 30px;">
     <div class="container">
       <h3>Top Restaurant Near You</h3>
       <p style="color: aquamarine;">Location : Jakarta</p>
