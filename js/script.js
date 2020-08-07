@@ -65,4 +65,37 @@ $(document).ready(function () {
     localStorage.removeItem('access_token')
     showLogin()
   })
+
+  $('#login-form').on('submit', function (event) {
+    const email = $('#email-login').val()
+    const password = $('#password-login').val()
+
+    //console.log(email, password)
+    $('#email-login').val('')
+    $('#password-login').val('')
+
+    $.ajax({
+      method: 'POST',
+      url: `${SERVER_PATH}/users/login`,
+      data: {
+        email,
+        password
+      }
+    })
+      .done((response) => {
+        console.log('done')
+        console.log(response)
+        localStorage.setItem('access_token', response.access_token)
+      })
+      .fail((xhr, status, error) => {
+        console.log('fail')
+        console.log(xhr, status, error)
+      })
+      .always((response) => {
+        console.log('always')
+        console.log(response)
+      })
+
+    event.preventDefault()
+  })
 })
