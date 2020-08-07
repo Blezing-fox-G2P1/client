@@ -60,8 +60,32 @@
   </div>
 
   <div id="aga">
+    <h1>Calculate your Nutrient intake!</h1>
 
+    <form name="nutrition-form" class="nutrition">
+      <div>
+        <label for="quantity">Quantity</label>
+        <input type="number" name="quantity" id="quantity">
+      </div>
+      <div>
+        <label for="size">Size</label>
+        <select name="size" id="size">
+          <option selected disabled>pick size</option>
+          <option value="small">small</option>
+          <option value="medium">small</option>
+          <option value="large">small</option>
+        </select>
+      </div>
+      <div>
+        <label for="food">Food</label>
+        <input type="text" name="food" id="food">
+      </div>
+      <div>
+        <button type="submit">find nutrition</button>
+      </div>
+    </form>    
   </div>
+
   <section id="login">
     <div class="container">
       <div class="row">
