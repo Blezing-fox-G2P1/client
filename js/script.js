@@ -1,6 +1,8 @@
 const SERVER_PATH = 'http://localhost:3000'
 
 function onSignIn(googleUser) {
+  console.log(id_token)
+  
   var id_token = googleUser.getAuthResponse().id_token;
 
   $.ajax({
@@ -13,7 +15,8 @@ function onSignIn(googleUser) {
     .done(response => {
       console.log('done')
       console.log(response)
-      localStorage.setItem('access_token', response_access_token)
+      localStorage.setItem('access_token', response.access_token)
+      showResto()
     })
     .fail((xhr, status, error) => {
       console.log('fail')
@@ -22,7 +25,7 @@ function onSignIn(googleUser) {
     .always(response => {
       console.log('always')
       console.log(response)
-
+      console.log('No token')
     })
 }
 function signOut() {
@@ -37,29 +40,30 @@ function showLogin() {
   $('#resto').hide()
   $('#register').hide()
   $('#navbar').hide()
-  $('#aris').hide()
-
+  $('#meals').hide()
 }
 function showRegister() {
   $('#register').show()
   $('#login').hide()
-  $('#resto').hide()
+  $('#resto').show()
   $('#navbar').hide()
-  $('#aris').hide()
+  $('#meals').hide()
 
 }
-function showAris() {
+function showMeals() {
   $('#navbar').show()
-  $('#aris').show()
+  $('#meals').show()
   $('#login').hide()
   $('#register').hide()
   $('#resto').hide()
 }
 
 function showResto() {
+  console.log('showResto manggil fetch data resto')
+  fetchDataResto()
   $('#navbar').show()
   $('#resto').show()
-  $('#aris').hide()
+  $('#meals').hide()
   $('#login').hide()
   $('#register').hide()
 }
@@ -94,10 +98,11 @@ function mealsRecomendation() {
     })
 }
 function fetchDataResto() {
-  $('#list-resto').empty()
+  console.log('fetc data Resto nih')
+  // $('#list-resto').empty()
   $.ajax({
     method: 'GET',
-    url: `${SERVER_PATH}/resto`
+    url: `${SERVER_PATH}/restaurant`
   })
     .done((response) => {
       console.log('done')
@@ -134,10 +139,8 @@ function fetchDataResto() {
 $(document).ready(function () {
   if (!localStorage.getItem('access_token')) {
     showLogin()
-    $('#aris').hide()
-
   } else {
-    showResto()
+    showMeals()
   }
 
   $('#fecthMeals').on('click', mealsRecomendation)
@@ -162,7 +165,11 @@ $(document).ready(function () {
   $('#btnGoToRestoPage').click(function (event) {
     event.preventDefault()
     showResto()
-    fetchDataResto()
+  })
+
+  $('#btnMeals').click(function (event) {
+    event.preventDefault()
+    showMeals()
   })
 
   $('#login-form').on('submit', function (event) {
@@ -185,6 +192,7 @@ $(document).ready(function () {
         console.log('done')
         console.log(response)
         localStorage.setItem('access_token', response.access_token)
+        showResto()
       })
       .fail((xhr, status, error) => {
         console.log('fail')
