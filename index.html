@@ -9,6 +9,7 @@
   <!-- Meta Google Sigin Api With my client Id-->
   <meta name="google-signin-client_id" content="688088739708-akoo46kgbbi96iqkc3psfd46ufdof34s.apps.googleusercontent.com">
 
+  <link rel="stylesheet" href="style.css">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
     integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
@@ -16,7 +17,7 @@
   <title>Spa</title>
 </head>
 
-<body>
+<body id="all-body">
 
   <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
@@ -49,8 +50,32 @@
     </div>
   </div>
 
-  <div id="aga" >
 
+  <div id="aga">
+    <h1>Calculate your Nutrient intake!</h1>
+
+    <form name="nutrition-form" class="nutrition">
+      <div>
+        <label for="quantity">Quantity</label>
+        <input type="number" name="quantity" id="quantity">
+      </div>
+      <div>
+        <label for="size">Size</label>
+        <select name="size" id="size">
+          <option selected disabled>pick size</option>
+          <option value="small">small</option>
+          <option value="medium">small</option>
+          <option value="large">small</option>
+        </select>
+      </div>
+      <div>
+        <label for="food">Food</label>
+        <input type="text" name="food" id="food">
+      </div>
+      <div>
+        <button type="submit">find nutrition</button>
+      </div>
+    </form>    
   </div>
   <section id="login" style="margin-top: 40px;">
     <div class="container">
